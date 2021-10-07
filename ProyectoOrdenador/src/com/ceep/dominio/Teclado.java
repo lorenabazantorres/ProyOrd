@@ -8,27 +8,22 @@ package com.ceep.dominio;
  *
  * @author Alumno mañana
  */
-public class Teclado extends DispositivoEntrada{
-    private static int id_Teclado;
-    private static int contadorTeclado;
-    
-    //CONSTR
+public class Teclado extends DispositivoEntrada {
 
+    private final int id_Teclado;
+    private static int contadorTeclado;
+
+    //CONSTR
     public Teclado(String tipoEntrada, String marca) {
         super(tipoEntrada, marca);
-        TecladoContador();
+        this.id_Teclado = ++Teclado.contadorTeclado;
+
     }
-    
-    
-    public void TecladoContador() {
-         this.id_Teclado=++Teclado.contadorTeclado;
-    }
-    
-    //TOSTRING
 
     @Override
     public String toString() {
-        return "Teclado{" + "id_Teclado=" + id_Teclado;
+        //TOSTRING DE LA CLASE PADRE
+        return super.toString() + "\n\t-> id_Teclado : " + id_Teclado;
     }
-    
+
 }

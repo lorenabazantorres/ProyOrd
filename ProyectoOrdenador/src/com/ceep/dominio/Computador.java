@@ -8,35 +8,37 @@ package com.ceep.dominio;
  *
  * @author Alumno mañana
  */
-public class Computador extends Order{
-    private int id_Computadora;
+public class Computador {
+
+    private final int id_Computadora;
     private String nombre;
     Monitor monitores;
     Teclado teclados;
     Raton ratones;
+    private static int contComput;
     //metodo agregar monitores
-    
-    
+
     //CONSTR
+
+    public Computador() {
+         this.id_Computadora = ++contComput;
+    }
+    
     public Computador(String nombre, Monitor monitores, Teclado teclados, Raton ratones) {
+        this();
         this.nombre = nombre;
         this.monitores = monitores;
         this.teclados = teclados;
         this.ratones = ratones;
-              
     }
 
     @Override
     public String toString() {
-        return "Computador{" + "id_Computadora=" + id_Computadora + ", nombre=" + nombre + ", monitores=" + monitores + ", teclados=" + teclados + ", ratones=" + ratones + '}';
+        return "\t - id_Computadora : " + id_Computadora +  "\t - Nombre : " + nombre + "\t - Monitores : " + monitores + "\t - Teclados : " + teclados + "\t - Ratones : " + ratones;
     }
 
     public int getId_Computadora() {
         return id_Computadora;
-    }
-
-    public void setId_Computadora(int id_Computadora) {
-        this.id_Computadora = id_Computadora;
     }
 
     public String getNombre() {
@@ -71,5 +73,4 @@ public class Computador extends Order{
         this.ratones = ratones;
     }
 
-    
 }

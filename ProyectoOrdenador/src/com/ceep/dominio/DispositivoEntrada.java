@@ -9,19 +9,25 @@ package com.ceep.dominio;
  * @author Alumno mañana
  */
 public class DispositivoEntrada {
-    private  String tipoEntrada;
-    private String marca;
+//ATRIBUTOS
+//LA CLASE PADRE NO TIENE ATRIBUTOS PRIVADOS, SINO PROTECTED PARA QUE LAS CLASES HIJAS ACCEDAN A ESOS ATRIBUTOS
+    protected String tipoEntrada;
+    protected String marca;
 
+    //CONSTRUCTORES
     public DispositivoEntrada(String tipoEntrada, String marca) {
         this.tipoEntrada = tipoEntrada;
         this.marca = marca;
     }
 
+    
+    //TOSTRING
     @Override
     public String toString() {
-        return "DispositivoEntrada{" + "tipoEntrada=" + tipoEntrada + ", marca=" + marca + '}';
+        return "\t\n - Tipo de entrada : " + tipoEntrada + "\t\n - Marca : " + marca;
     }
 
+    //G&S
     public String getTipoEntrada() {
         return tipoEntrada;
     }
@@ -37,6 +43,5 @@ public class DispositivoEntrada {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    
-    
+
 }

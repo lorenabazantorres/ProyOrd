@@ -9,19 +9,22 @@ package com.ceep.dominio;
  * @author Alumno mañana
  */
 public class Raton extends DispositivoEntrada{
-    private static int id_Raton;
+    private final int id_Raton;
     private static int contadorRaton;
     
     //CONST
 
-    public Raton(String tipoEntrada, String marca) {
+    public Raton(String tipoEntrada, String marca) {  
+        //Accedo desde la clase hija a los atributos de la clase padre
          super(tipoEntrada, marca);
-         RatonContador();
+          this.id_Raton=++Raton.contadorRaton;
     }
-    
-    
-    public void RatonContador() {
-         this.id_Raton=++Raton.contadorRaton;
+
+    @Override
+    public String toString() {
+        //TOSTRING DE LA CLASE PADRE
+        return super.toString() + "\n\t-> id_Raton : " + id_Raton;
     }
+   
     
 }

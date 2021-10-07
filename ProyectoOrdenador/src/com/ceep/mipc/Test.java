@@ -14,18 +14,24 @@ import com.ceep.dominio.*;
 public class Test {
 
     public static void main(String[] args) {
-        //OBJETOS  
-        //PC
+//        OBJETOS  
+//        PC
 
         Teclado t1 = new Teclado("USB", "Corsair");
         Raton r1 = new Raton("USB", "Razer");
         Monitor m1 = new Monitor("LG", 27.0);
         Computador c1 = new Computador("Gaming", m1, t1, r1);
-
+     
+       
         //PEDIDIO
         Order p1 = new Order();
+        
 
         //METEMOS LOS ORDENADORES EN EL PEDIDO
         p1.agregarComputadora(c1);
+        p1.mostrarOrder();
+       
+
+     
     }
 }

@@ -8,36 +8,35 @@ package com.ceep.dominio;
  *
  * @author Alumno mañana
  */
-public class Monitor extends Computador {
 
-    private static int id_monitor;
+
+public class Monitor{
+//ATRIBUTOS
+    private final int id_monitor;
     private String marca;
-    private double tamaño;
+    private double tamano;
     private static int contadorMonitor;
 
-    public void MonitorCont() {
-        this.id_monitor = ++Monitor.contadorMonitor;
+    public Monitor() {
+        this.id_monitor = ++contadorMonitor;
     }
 
-    public Monitor(String marca, double tamaño) {
+    public Monitor(String marca, double tamano) {
+        //Llamo al constructor vacío en el que le asigno un id
+        this();
         this.marca = marca;
-        this.tamaño = tamaño;
-        MonitorCont();
+        this.tamano = tamano;
     }
 
     //TOSTRING
     @Override
     public String toString() {
-        return "Monitor{" + "id_monitor=" + id_monitor + ", marca=" + marca + ", tamano=" + tamaño + ", contadorMonitor=" + contadorMonitor + '}';
+        return "\t\n - Marca : " + marca + "\t\n - Tamaño : " + tamano ;
     }
 
     //G&S
     public int getId_monitor() {
         return id_monitor;
-    }
-
-    public void setId_monitor(int id_monitor) {
-        this.id_monitor = id_monitor;
     }
 
     public String getMarca() {
@@ -49,11 +48,11 @@ public class Monitor extends Computador {
     }
 
     public double getTamaño() {
-        return tamaño;
+        return tamano;
     }
 
     public void setTamaño(double tamaño) {
-        this.tamaño = tamaño;
+        this.tamano = tamaño;
     }
 
     public int getContadorMonitor() {
